@@ -1,7 +1,7 @@
-import TopBar from './components/TopBar';
+import Home from './pages/home/Home';
 
 function App() {
-    return <TopBar />;
+    return <Home />;
 }
 
 export default App;
