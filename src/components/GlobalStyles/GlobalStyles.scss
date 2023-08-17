@@ -1,0 +1,27 @@
+@import 'normalize.css';
+
+:root {
+    --white: #fff;
+    --red: #f00;
+
+    // Default layout
+    --default-layout-header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Anton', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
