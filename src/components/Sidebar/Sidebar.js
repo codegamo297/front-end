@@ -13,6 +13,8 @@ import {
 
 import styles from './Sidebar.module.scss';
 
+const imgPerson2 = require('~/assets/images/person/2.jpeg');
+
 const cx = classNames.bind(styles);
 
 function Sidebar() {
@@ -63,35 +65,35 @@ function Sidebar() {
 
                 <ul className={cx('friend-list')}>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                     <li className={cx('friend')}>
-                        <img src="/assets/person/2.jpeg" alt="" className={cx('img')} />
+                        <img src={imgPerson2} alt="" className={cx('img')} />
                         <span className={cx('friend-name')}>Jane Doe</span>
                     </li>
                 </ul>

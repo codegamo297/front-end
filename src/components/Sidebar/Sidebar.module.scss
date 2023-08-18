@@ -1,19 +1,21 @@
 .wrapper {
+    // position: fixed;
+    // width: 307.34px;
     flex: 3;
     height: calc(100vh - var(--default-layout-header-height));
     overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar {
     width: 0.7rem;
 }
 
-::-webkit-scrollbar-track {
+.wrapper::-webkit-scrollbar-track {
     background-color: #f1f1f1;
     border-radius: 9999px;
 }
 
-::-webkit-scrollbar-thumb {
+.wrapper::-webkit-scrollbar-thumb {
     background-color: rgba(217, 217, 227, 0.8);
     border-radius: 9999px;
 }

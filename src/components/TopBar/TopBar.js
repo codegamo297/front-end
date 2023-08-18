@@ -2,6 +2,8 @@ import classNames from 'classnames/bind';
 import styles from './TopBar.module.scss';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material';
 
+const imgPerson1 = require('~/assets/images/person/1.jpeg');
+
 const cx = classNames.bind(styles);
 
 function TopBar() {
@@ -35,7 +37,7 @@ function TopBar() {
                         <span className={cx('icon-badge')}>1</span>
                     </div>
                 </div>
-                <img src="/assets/person/1.jpeg" alt="" className={cx('img')}></img>
+                <img src={imgPerson1} alt="" className={cx('img')}></img>
             </div>
         </div>
     );
