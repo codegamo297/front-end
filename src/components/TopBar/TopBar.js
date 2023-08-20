@@ -2,7 +2,8 @@ import classNames from 'classnames/bind';
 import styles from './TopBar.module.scss';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material';
 
-const imgPerson1 = require('~/assets/images/person/1.jpeg');
+// const imgPerson1 = require('~/assets/images/person/1.jpeg');
+import imgPerson1 from '~/assets/images/person/1.jpeg';
 
 const cx = classNames.bind(styles);
 
