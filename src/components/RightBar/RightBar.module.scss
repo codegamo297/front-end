@@ -1,3 +1,96 @@
 .wrapper {
+    // position: fixed;
+    // right: 0;
+    // width: 357px;
     flex: 3.5;
+    height: calc(100vh - var(--default-layout-header-height));
+    overflow-y: hidden;
+
+    &:hover {
+        overflow-y: scroll;
+    }
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+.wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 9999px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(217, 217, 227, 0.8);
+    border-radius: 9999px;
+}
+
+.container {
+    width: 349px;
+    padding: 20px 20px 0 0;
+}
+
+.birthday-container {
+    display: flex;
+    align-items: center;
+}
+
+.birthday-img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 10px;
+}
+
+.birthday-text {
+    font-weight: 350;
+    font-size: 1.4rem;
+    // margin-bottom: -4px;
+}
+
+.ad {
+    width: 100%;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.friend-list {
+    list-style: none;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-img-container {
+    margin-right: 10px;
+    position: relative;
+}
+
+.profile-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.online {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #2ecc71;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    border: 2px solid var(--white);
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 1.4rem;
 }

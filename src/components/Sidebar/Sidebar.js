@@ -98,6 +98,7 @@ function Sidebar() {
                     </li>
                 </ul>
             </div>
+            <div className={cx('content')}></div>
         </div>
     );
 }

@@ -3,7 +3,11 @@
     // width: 307.34px;
     flex: 3;
     height: calc(100vh - var(--default-layout-header-height));
-    overflow-y: scroll;
+    overflow-y: hidden;
+
+    &:hover {
+        overflow-y: scroll;
+    }
 }
 
 .wrapper::-webkit-scrollbar {
