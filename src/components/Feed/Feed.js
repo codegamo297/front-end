@@ -12,7 +12,7 @@ function Feed() {
             <div className={cx('container')}>
                 <Share />
                 {Posts.map((post) => (
-                    <Post key={post.id} data={post} />
+                    <Post key={post.id} post={post} />
                 ))}
             </div>
         </div>

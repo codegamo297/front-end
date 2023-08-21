@@ -1,7 +1,6 @@
 .wrapper {
-    // position: fixed;
-    // right: 0;
-    // width: 357px;
+    position: sticky;
+    top: 60px;
     flex: 3.5;
     height: calc(100vh - var(--default-layout-header-height));
     overflow-y: hidden;
@@ -16,7 +15,8 @@
 }
 
 .wrapper::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+    // background-color: #f1f1f1;
+    background-color: #fff;
     border-radius: 9999px;
 }
 
@@ -59,38 +59,4 @@
 
 .friend-list {
     list-style: none;
-}
-
-.friend {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.profile-img-container {
-    margin-right: 10px;
-    position: relative;
-}
-
-.profile-img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.online {
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background-color: #2ecc71;
-    position: absolute;
-    top: -2px;
-    right: 0;
-    border: 2px solid var(--white);
-}
-
-.user-name {
-    font-weight: 500;
-    font-size: 1.4rem;
 }

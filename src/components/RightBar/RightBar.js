@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
 import styles from './RightBar.module.scss';
 
+import { Users } from '~/dummyData';
+import Online from '../Online';
+
 const imgBirthday = require('~/assets/images/gift.png');
-const imgProfile = require('~/assets/images/person/3.jpeg');
 const imgAd = require('~/assets/images/ad.png');
 const cx = classNames.bind(styles);
 
@@ -19,90 +21,9 @@ function RightBar() {
                 <img className={cx('ad')} src={imgAd} alt="" />
                 <h4 className={cx('title')}>Online Friends</h4>
                 <ul className={cx('friend-list')}>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
-                    <li className={cx('friend')}>
-                        <div className={cx('profile-img-container')}>
-                            <img className={cx('profile-img')} src={imgProfile} alt="" />
-                            <span className={cx('online')}></span>
-                        </div>
-                        <span className={cx('user-name')}>John Carter</span>
-                    </li>
+                    {Users.map((user) => (
+                        <Online key={user.id} user={user} />
+                    ))}
                 </ul>
             </div>
         </div>
