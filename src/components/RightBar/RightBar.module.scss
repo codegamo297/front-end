@@ -55,8 +55,61 @@
 
 .title {
     margin-bottom: 20px;
+    font-size: 1.7rem;
+    font-weight: 500;
 }
 
 .friend-list {
     list-style: none;
+}
+
+.profile-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.info {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.info-key {
+    font-weight: 500;
+    margin-right: 15px;
+    color: #545b77;
+}
+
+.info-value {
+    font-weight: 300;
+    color: #413543;
+}
+
+.followings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.following {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.following-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.following-name {
+    font-size: 1.4rem;
+    color: #434242;
 }

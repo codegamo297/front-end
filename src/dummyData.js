@@ -49,7 +49,7 @@ export const Users = [
     {
         id: 6,
         profilePicture: imgPerson6,
-        username: 'Shirley Beauchamp',
+        username: 'Shirley Smith',
     },
     {
         id: 7,

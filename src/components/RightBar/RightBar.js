@@ -8,10 +8,10 @@ const imgBirthday = require('~/assets/images/gift.png');
 const imgAd = require('~/assets/images/ad.png');
 const cx = classNames.bind(styles);
 
-function RightBar() {
-    return (
-        <div className={cx('wrapper')}>
-            <div className={cx('container')}>
+function RightBar({ profile }) {
+    const HomeRightBar = () => {
+        return (
+            <>
                 <div className={cx('birthday-container')}>
                     <img className={cx('birthday-img')} src={imgBirthday} alt="" />
                     <span className={cx('birthday-text')}>
@@ -25,6 +25,44 @@ function RightBar() {
                         <Online key={user.id} user={user} />
                     ))}
                 </ul>
+            </>
+        );
+    };
+
+    const ProfileRightBar = () => {
+        return (
+            <>
+                <h4 className={cx('profile-title')}>User information</h4>
+                <div className={cx('info')}>
+                    <div className={cx('info-item')}>
+                        <span className={cx('info-key')}>City:</span>
+                        <span className={cx('info-value')}>New York</span>
+                    </div>
+                    <div className={cx('info-item')}>
+                        <span className={cx('info-key')}>From:</span>
+                        <span className={cx('info-value')}>Madrid</span>
+                    </div>
+                    <div className={cx('info-item')}>
+                        <span className={cx('info-key')}>Relationship:</span>
+                        <span className={cx('info-value')}>Single</span>
+                    </div>
+                </div>
+                <h4 className={cx('profile-title')}>User friends</h4>
+                <div className={cx('followings')}>
+                    {Users.map((user) => (
+                        <div key={user.id} className={cx('following')}>
+                            <img className={cx('following-img')} src={user.profilePicture} alt="" />
+                            <span className={cx('following-name')}>{user.username}</span>
+                        </div>
+                    ))}
+                </div>
+            </>
+        );
+    };
+    return (
+        <div className={cx('wrapper')}>
+            <div className={cx('container')}>
+                {profile ? <ProfileRightBar /> : <HomeRightBar />}
             </div>
         </div>
     );

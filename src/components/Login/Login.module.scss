@@ -1,0 +1,128 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9f5f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 70%;
+    height: 70%;
+    display: flex;
+}
+
+.left,
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 2.4rem;
+}
+
+.box {
+    height: 360px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.inp-container {
+    position: relative;
+}
+
+.input {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #9e9fa5;
+    font-size: 1.8rem;
+    padding-left: 20px;
+    padding-right: 38px;
+
+    &:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px #e7f3ff;
+        caret-color: var(--primary);
+        outline: none;
+    }
+}
+
+.show-password,
+.hide-password {
+    position: absolute;
+    right: 4px;
+    top: 9px;
+    font-size: 20px !important;
+    height: 30px !important;
+    width: 30px !important;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+    }
+}
+
+.btn {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+.forgot {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--primary);
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.hr {
+    margin: 10px 0;
+    opacity: 0.5;
+}
+
+.register-btn {
+    width: 60%;
+    height: 50px;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: #42b72a;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #3cac26;
+    }
+}
