@@ -6,8 +6,8 @@ import Sidebar from '~/components/Sidebar';
 import RightBar from '~/components/RightBar';
 import Feed from '~/components/Feed';
 
-import imgCover from '~/assets/images/post/3.jpeg';
-import imgUser from '~/assets/images/person/3.jpeg';
+import imgCover from '~/assets/images/post/1.jpeg';
+import imgUser from '~/assets/images/person/1.jpeg';
 
 const cx = classNames.bind(styles);
 

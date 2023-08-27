@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './TopBar.module.scss';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 // const imgPerson1 = require('~/assets/images/person/1.jpeg');
 import imgPerson1 from '~/assets/images/person/1.jpeg';
@@ -11,12 +12,17 @@ function TopBar() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('left')}>
-                <span className={cx('logo')}>Social Media App</span>
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <span className={cx('logo')}>Social Media App</span>
+                </Link>
             </div>
             <div className={cx('center')}>
                 <div className={cx('search-bar')}>
                     <Search className={cx('search-icon')} />
-                    <input placeholder="Search for friend, post or video" className={cx('search-input')}></input>
+                    <input
+                        placeholder="Search for friend, post or video"
+                        className={cx('search-input')}
+                    ></input>
                 </div>
             </div>
             <div className={cx('right')}>

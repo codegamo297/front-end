@@ -1,74 +1,62 @@
-import imgPerson1 from '~/assets/images/person/1.jpeg';
-import imgPerson2 from '~/assets/images/person/2.jpeg';
-import imgPerson3 from '~/assets/images/person/3.jpeg';
-import imgPerson4 from '~/assets/images/person/4.jpeg';
-import imgPerson5 from '~/assets/images/person/5.jpeg';
-import imgPerson6 from '~/assets/images/person/6.jpeg';
-import imgPerson7 from '~/assets/images/person/7.jpeg';
-import imgPerson8 from '~/assets/images/person/8.jpeg';
-import imgPerson9 from '~/assets/images/person/9.jpeg';
-import imgPerson10 from '~/assets/images/person/10.jpeg';
-
-import imgPost1 from '~/assets/images/post/1.jpeg';
-import imgPost2 from '~/assets/images/post/2.jpeg';
-import imgPost3 from '~/assets/images/post/3.jpeg';
-import imgPost4 from '~/assets/images/post/4.jpeg';
-import imgPost5 from '~/assets/images/post/5.jpeg';
-import imgPost6 from '~/assets/images/post/6.jpeg';
-import imgPost7 from '~/assets/images/post/7.jpeg';
-import imgPost8 from '~/assets/images/post/8.jpeg';
-import imgPost9 from '~/assets/images/post/9.jpeg';
-import imgPost10 from '~/assets/images/post/10.jpeg';
-
 export const Users = [
     {
         id: 1,
-        profilePicture: imgPerson1,
+        profilePicture:
+            'https://raw.githubusercontent.com/safak/youtube/mern-social-app/client/public/assets/person/1.jpeg',
         username: 'Safak Kocaoglu',
     },
     {
         id: 2,
-        profilePicture: imgPerson2,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/2.jpeg?raw=true',
         username: 'Janell Shrum',
     },
     {
         id: 3,
-        profilePicture: imgPerson3,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/3.jpeg?raw=true',
         username: 'Alex Durden',
     },
     {
         id: 4,
-        profilePicture: imgPerson4,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/4.jpeg?raw=true',
         username: 'Dora Hawks',
     },
     {
         id: 5,
-        profilePicture: imgPerson5,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/5.jpeg?raw=true',
         username: 'Thomas Holden',
     },
     {
         id: 6,
-        profilePicture: imgPerson6,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/6.jpeg?raw=true',
         username: 'Shirley Smith',
     },
     {
         id: 7,
-        profilePicture: imgPerson7,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/7.jpeg?raw=true',
         username: 'Travis Bennett',
     },
     {
         id: 8,
-        profilePicture: imgPerson8,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/8.jpeg?raw=true',
         username: 'Kristen Thomas',
     },
     {
         id: 9,
-        profilePicture: imgPerson9,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/9.jpeg?raw=true',
         username: 'Gary Duty',
     },
     {
         id: 10,
-        profilePicture: imgPerson10,
+        profilePicture:
+            'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/person/10.jpeg?raw=true',
         username: 'Safak Kocaoglu',
     },
 ];
@@ -77,7 +65,7 @@ export const Posts = [
     {
         id: 1,
         desc: 'Love For All, Hatred For None.',
-        photo: imgPost1,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/1.jpeg?raw=true',
         date: '5 mins ago',
         userId: 1,
         like: 32,
@@ -85,7 +73,7 @@ export const Posts = [
     },
     {
         id: 2,
-        photo: imgPost2,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/2.jpeg?raw=true',
         date: '15 mins ago',
         userId: 2,
         like: 2,
@@ -94,7 +82,7 @@ export const Posts = [
     {
         id: 3,
         desc: 'Every moment is a fresh beginning.',
-        photo: imgPost3,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/3.jpeg?raw=true',
         date: '1 hour ago',
         userId: 3,
         like: 61,
@@ -102,7 +90,7 @@ export const Posts = [
     },
     {
         id: 4,
-        photo: imgPost4,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/4.jpeg?raw=true',
         date: '4 hours ago',
         userId: 4,
         like: 7,
@@ -110,7 +98,7 @@ export const Posts = [
     },
     {
         id: 5,
-        photo: imgPost5,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/5.jpeg?raw=true',
         date: '5 hours ago',
         userId: 5,
         like: 23,
@@ -118,7 +106,7 @@ export const Posts = [
     },
     {
         id: 6,
-        photo: imgPost6,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/6.jpeg?raw=true',
         date: '1 day ago',
         userId: 6,
         like: 44,
@@ -127,7 +115,7 @@ export const Posts = [
     {
         id: 7,
         desc: 'Never regret anything that made you smile.',
-        photo: imgPost7,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/7.jpeg?raw=true',
         date: '2 days ago',
         userId: 7,
         like: 52,
@@ -135,7 +123,7 @@ export const Posts = [
     },
     {
         id: 8,
-        photo: imgPost8,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/8.jpeg?raw=true',
         date: '3 days ago',
         userId: 8,
         like: 15,
@@ -144,7 +132,7 @@ export const Posts = [
     {
         id: 9,
         desc: 'Change the world by being yourself.',
-        photo: imgPost9,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/9.jpeg?raw=true',
         date: '5 days ago',
         userId: 9,
         like: 11,
@@ -152,7 +140,7 @@ export const Posts = [
     },
     {
         id: 10,
-        photo: imgPost10,
+        photo: 'https://github.com/safak/youtube/blob/mern-social-app/client/public/assets/post/10.jpeg?raw=true',
         date: '1 week ago',
         userId: 10,
         like: 104,
