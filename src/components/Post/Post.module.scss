@@ -21,6 +21,13 @@
     align-items: center;
 }
 
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
 .profile-img {
     height: 3.2rem;
     width: 3.2rem;
@@ -30,8 +37,13 @@
 
 .user-name {
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0 10px;
+    color: var(--black);
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .date {

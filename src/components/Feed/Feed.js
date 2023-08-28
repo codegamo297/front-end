@@ -8,16 +8,18 @@ import axios from 'axios';
 
 const cx = classNames.bind(styles);
 
-function Feed() {
+function Feed({ userName }) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get('posts/timeline/64eab5ae08d04961645f2b54');
+            const res = userName
+                ? await axios.get('/posts/profile/' + userName)
+                : await axios.get('/posts/timeline/64eab5ae08d04961645f2b54');
             setPosts(res.data);
         };
         fetchPosts();
-    }, []);
+    }, [userName]);
 
     return (
         <div className={cx('wrapper')}>

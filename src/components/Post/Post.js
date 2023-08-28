@@ -1,9 +1,11 @@
 import classNames from 'classnames/bind';
-import styles from './Post.module.scss';
 import { MoreVert } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { formatDistance, parseISO } from 'date-fns';
+import { Link } from 'react-router-dom';
+
+import styles from './Post.module.scss';
 
 const imgNoAvatar = require('~/assets/images/person/noAvatar.png');
 const imgNoCover = require('~/assets/images/person/noCover.png');
@@ -18,9 +20,11 @@ function Post({ post }) {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`users/${post.userId}`);
+            const res = await axios.get(`/users?userId=${post.userId}`);
             setUser(res.data);
+            console.log(res.data);
         };
+
         fetchUser();
     }, [post.userId]);
 
@@ -34,12 +38,14 @@ function Post({ post }) {
             <div className={cx('container')}>
                 <div className={cx('top')}>
                     <div className={cx('top-left')}>
-                        <img
-                            className={cx('profile-img')}
-                            src={user.profilePicture || imgNoAvatar}
-                            alt=""
-                        />
-                        <span className={cx('user-name')}>{user.userName}</span>
+                        <Link to={`/profile/${user.userName}`} className={cx('link')}>
+                            <img
+                                className={cx('profile-img')}
+                                src={user.profilePicture || imgNoAvatar}
+                                alt=""
+                            />
+                            <span className={cx('user-name')}>{user.userName}</span>
+                        </Link>
                         <span className={cx('date')}>
                             {formatDistance(parseISO(post.createdAt), new Date(), {
                                 addSuffix: true,

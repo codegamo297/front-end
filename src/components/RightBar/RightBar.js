@@ -8,7 +8,7 @@ const imgBirthday = require('~/assets/images/gift.png');
 const imgAd = require('~/assets/images/ad.png');
 const cx = classNames.bind(styles);
 
-function RightBar({ profile }) {
+function RightBar({ user }) {
     const HomeRightBar = () => {
         return (
             <>
@@ -36,15 +36,21 @@ function RightBar({ profile }) {
                 <div className={cx('info')}>
                     <div className={cx('info-item')}>
                         <span className={cx('info-key')}>City:</span>
-                        <span className={cx('info-value')}>New York</span>
+                        <span className={cx('info-value')}>{user.city}</span>
                     </div>
                     <div className={cx('info-item')}>
                         <span className={cx('info-key')}>From:</span>
-                        <span className={cx('info-value')}>Madrid</span>
+                        <span className={cx('info-value')}>{user.from}</span>
                     </div>
                     <div className={cx('info-item')}>
                         <span className={cx('info-key')}>Relationship:</span>
-                        <span className={cx('info-value')}>Single</span>
+                        <span className={cx('info-value')}>
+                            {user.relationship === 1
+                                ? 'Single'
+                                : user.relationship === 2
+                                ? 'Married'
+                                : '-'}
+                        </span>
                     </div>
                 </div>
                 <h4 className={cx('profile-title')}>User friends</h4>
@@ -61,9 +67,7 @@ function RightBar({ profile }) {
     };
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('container')}>
-                {profile ? <ProfileRightBar /> : <HomeRightBar />}
-            </div>
+            <div className={cx('container')}>{user ? <ProfileRightBar /> : <HomeRightBar />}</div>
         </div>
     );
 }
