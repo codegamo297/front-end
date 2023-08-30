@@ -91,6 +91,10 @@
     font-weight: 500;
     background-color: var(--primary);
     cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 .forgot {
