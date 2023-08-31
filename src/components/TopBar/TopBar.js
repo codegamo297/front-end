@@ -1,14 +1,16 @@
 import classNames from 'classnames/bind';
-import styles from './TopBar.module.scss';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 
-// const imgPerson1 = require('~/assets/images/person/1.jpeg');
-import imgPerson1 from '~/assets/images/person/1.jpeg';
+import styles from './TopBar.module.scss';
+import { AuthorContext } from '~/context/AuthorContext';
 
 const cx = classNames.bind(styles);
 
 function TopBar() {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const { user } = useContext(AuthorContext);
     return (
         <div className={cx('wrapper')}>
             <div className={cx('left')}>
@@ -44,7 +46,17 @@ function TopBar() {
                         <span className={cx('icon-badge')}>1</span>
                     </div>
                 </div>
-                <img src={imgPerson1} alt="" className={cx('img')}></img>
+                <Link to={`/profile/${user.userName}`} className={cx('link-img')}>
+                    <img
+                        src={
+                            user.profilePicture
+                                ? PF + user.profilePicture
+                                : `${PF}person/noAvatar.png`
+                        }
+                        alt=""
+                        className={cx('img')}
+                    ></img>
+                </Link>
             </div>
         </div>
     );

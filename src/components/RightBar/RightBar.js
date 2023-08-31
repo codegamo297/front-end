@@ -4,21 +4,21 @@ import styles from './RightBar.module.scss';
 import { Users } from '~/dummyData';
 import Online from '../Online';
 
-const imgBirthday = require('~/assets/images/gift.png');
-const imgAd = require('~/assets/images/ad.png');
 const cx = classNames.bind(styles);
 
 function RightBar({ user }) {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     const HomeRightBar = () => {
         return (
             <>
                 <div className={cx('birthday-container')}>
-                    <img className={cx('birthday-img')} src={imgBirthday} alt="" />
+                    <img className={cx('birthday-img')} src={`${PF}gift.png`} alt="" />
                     <span className={cx('birthday-text')}>
                         <b>Pola Foster</b> and <b>3 other friends</b> hav a birthday today
                     </span>
                 </div>
-                <img className={cx('ad')} src={imgAd} alt="" />
+                <img className={cx('ad')} src={`${PF}ad.png`} alt="" />
                 <h4 className={cx('title')}>Online Friends</h4>
                 <ul className={cx('friend-list')}>
                     {Users.map((user) => (
@@ -57,7 +57,11 @@ function RightBar({ user }) {
                 <div className={cx('followings')}>
                     {Users.map((user) => (
                         <div key={user.id} className={cx('following')}>
-                            <img className={cx('following-img')} src={user.profilePicture} alt="" />
+                            <img
+                                className={cx('following-img')}
+                                src={PF + user.profilePicture}
+                                alt=""
+                            />
                             <span className={cx('following-name')}>{user.username}</span>
                         </div>
                     ))}

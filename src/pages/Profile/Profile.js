@@ -9,14 +9,12 @@ import Sidebar from '~/components/Sidebar';
 import RightBar from '~/components/RightBar';
 import Feed from '~/components/Feed';
 
-const imgNoAvatar = require('~/assets/images/person/noAvatar.png');
-const imgNoCover = require('~/assets/images/person/noCover.png');
-
 const cx = classNames.bind(styles);
 
 function Profile() {
     const [user, setUser] = useState({});
     const userName = useParams().userName;
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -35,12 +33,12 @@ function Profile() {
                         <div className={cx('cover')}>
                             <img
                                 className={cx('cover-img')}
-                                src={user.coverPicture || imgNoCover}
+                                src={PF + user.coverPicture || `${PF}person/noCover.png`}
                                 alt=""
                             />
                             <img
                                 className={cx('user-img')}
-                                src={user.profilePicture || imgNoAvatar}
+                                src={PF + user.profilePicture || `${PF}person/noAvatar.png`}
                                 alt=""
                             />
                         </div>

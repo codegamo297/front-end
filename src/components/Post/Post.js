@@ -1,22 +1,25 @@
 import classNames from 'classnames/bind';
 import { MoreVert } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { formatDistance, parseISO } from 'date-fns';
 import { Link } from 'react-router-dom';
 
 import styles from './Post.module.scss';
+import { AuthorContext } from '~/context/AuthorContext';
 
-const imgNoAvatar = require('~/assets/images/person/noAvatar.png');
-const imgNoCover = require('~/assets/images/person/noCover.png');
-const imgLike = require('~/assets/images/like.png');
-const imgHeart = require('~/assets/images/heart.png');
 const cx = classNames.bind(styles);
 
 function Post({ post }) {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const [user, setUser] = useState({});
+    const { user: currentUser } = useContext(AuthorContext);
+
+    useEffect(() => {
+        setIsLiked(post.likes.includes(currentUser._id));
+    }, [currentUser._id, post.likes]);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -28,6 +31,9 @@ function Post({ post }) {
     }, [post.userId]);
 
     const likeHandler = () => {
+        try {
+            axios.put('/posts/' + post._id + '/like', { userId: currentUser._id });
+        } catch (error) {}
         setLike(isLiked ? like - 1 : like + 1);
         setIsLiked(!isLiked);
     };
@@ -40,7 +46,7 @@ function Post({ post }) {
                         <Link to={`/profile/${user.userName}`} className={cx('link')}>
                             <img
                                 className={cx('profile-img')}
-                                src={user.profilePicture || imgNoAvatar}
+                                src={PF + user.profilePicture || `${PF}person/noAvatar.png`}
                                 alt=""
                             />
                             <span className={cx('user-name')}>{user.userName}</span>
@@ -57,19 +63,23 @@ function Post({ post }) {
                 </div>
                 <div className={cx('center')}>
                     <span className={cx('text')}>{post?.desc}</span>
-                    <img className={cx('post-img')} src={post.img || imgNoCover} alt="" />
+                    <img
+                        className={cx('post-img')}
+                        src={PF + post.img || `${PF}person/noCover.png`}
+                        alt=""
+                    />
                 </div>
                 <div className={cx('bottom')}>
                     <div className={cx('bottom-left')}>
                         <img
                             className={cx('emoticon')}
-                            src={imgLike}
+                            src={`${PF}like.png`}
                             onClick={likeHandler}
                             alt=""
                         />
                         <img
                             className={cx('emoticon')}
-                            src={imgHeart}
+                            src={`${PF}heart.png`}
                             onClick={likeHandler}
                             alt=""
                         />
