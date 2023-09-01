@@ -23,6 +23,7 @@ function Profile() {
         };
         fetchUser();
     }, [userName]);
+
     return (
         <>
             <TopBar />
@@ -49,7 +50,7 @@ function Profile() {
                     </div>
                     <div className={cx('right-bottom')}>
                         <Feed userName={userName} />
-                        <RightBar user={user} />
+                        {Object.keys(user).length > 0 ? <RightBar user={user} /> : null}
                     </div>
                 </div>
             </div>

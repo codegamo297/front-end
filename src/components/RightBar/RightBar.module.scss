@@ -63,6 +63,33 @@
     list-style: none;
 }
 
+.follow-btn {
+    // margin-top: 30px; Đây là cách sửa ở bên phần Post và Share
+    margin-bottom: 10px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.icon-fl {
+    margin-left: 4px;
+}
+
 .profile-title {
     font-size: 1.8rem;
     font-weight: 500;

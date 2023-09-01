@@ -1,13 +1,49 @@
 import classNames from 'classnames/bind';
-import styles from './RightBar.module.scss';
+import { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { Add, Remove } from '@mui/icons-material';
 
+import styles from './RightBar.module.scss';
 import { Users } from '~/dummyData';
 import Online from '../Online';
+import { AuthorContext } from '~/context/AuthorContext';
+import { Follow, UnFollow } from '~/context/AuthorActions';
 
 const cx = classNames.bind(styles);
 
 function RightBar({ user }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const [friends, setFriends] = useState([]);
+    const { user: currentUser, dispatch } = useContext(AuthorContext);
+    const [isFollowed, setIsFollowed] = useState(currentUser.followings.includes(user?._id));
+
+    useEffect(() => {
+        const getFriends = async () => {
+            try {
+                const friendList = await axios.get('/users/friends/' + user._id);
+                setFriends(friendList.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getFriends();
+    }, [user]);
+
+    const handleClick = async () => {
+        try {
+            if (isFollowed) {
+                await axios.put('/users/' + user._id + '/unfollow', { userId: currentUser._id });
+                dispatch(UnFollow(user._id));
+            } else {
+                await axios.put('/users/' + user._id + '/follow', { userId: currentUser._id });
+                dispatch(Follow(user._id));
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        setIsFollowed(!isFollowed);
+    };
 
     const HomeRightBar = () => {
         return (
@@ -32,6 +68,16 @@ function RightBar({ user }) {
     const ProfileRightBar = () => {
         return (
             <>
+                {user.userName !== currentUser.userName && (
+                    <button className={cx('follow-btn')} onClick={handleClick}>
+                        {isFollowed ? 'UnFollow' : 'Follow'}
+                        {isFollowed ? (
+                            <Remove className={cx('icon-fl')} />
+                        ) : (
+                            <Add className={cx('icon-fl')} />
+                        )}
+                    </button>
+                )}
                 <h4 className={cx('profile-title')}>User information</h4>
                 <div className={cx('info')}>
                     <div className={cx('info-item')}>
@@ -55,15 +101,21 @@ function RightBar({ user }) {
                 </div>
                 <h4 className={cx('profile-title')}>User friends</h4>
                 <div className={cx('followings')}>
-                    {Users.map((user) => (
-                        <div key={user.id} className={cx('following')}>
-                            <img
-                                className={cx('following-img')}
-                                src={PF + user.profilePicture}
-                                alt=""
-                            />
-                            <span className={cx('following-name')}>{user.username}</span>
-                        </div>
+                    {friends.map((friend) => (
+                        <Link
+                            key={friend._id}
+                            to={'/profile/' + friend.userName}
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <div className={cx('following')}>
+                                <img
+                                    className={cx('following-img')}
+                                    src={PF + friend.profilePicture || `${PF}person/noAvatar.png`}
+                                    alt=""
+                                />
+                                <span className={cx('following-name')}>{friend.userName}</span>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </>

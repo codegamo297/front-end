@@ -30,7 +30,7 @@ function Feed({ userName }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <Share />
+                {(!userName || userName === user.userName) && <Share />}
                 {posts.map((post) => (
                     <Post key={post._id} post={post} />
                 ))}

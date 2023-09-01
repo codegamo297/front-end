@@ -10,7 +10,12 @@ const INITIAL_STATE = {
         profilePicture: 'hari.jpg',
         coverPicture: 'sky.jpg',
         followers: ['64eab5ae08d04961645f2b54', '64eab5e008d04961645f2b56'],
-        followings: ['64eab5e008d04961645f2b56'],
+        followings: [
+            '64eab5ae08d04961645f2b54',
+            '64eab6c208d04961645f2b66',
+            '64eab5e008d04961645f2b56',
+            '64eab60f08d04961645f2b5a',
+        ],
         isAdmin: false,
         createdAt: '2023-08-27T08:47:33.278Z',
         updatedAt: '2023-08-28T07:33:22.737Z',
