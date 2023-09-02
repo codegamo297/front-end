@@ -19,23 +19,31 @@ const AuthorReducer = (state, action) => {
                 error: action.payload,
             };
         case 'FOLLOW':
-            return {
+            const updatedFollowingsFollow = [...state.user.followings, action.payload];
+            const updatedUserFollow = {
                 ...state,
                 user: {
                     ...state.user,
-                    followings: [...state.user.followings, action.payload],
+                    followings: updatedFollowingsFollow,
                 },
             };
+            localStorage.setItem('user', JSON.stringify(updatedUserFollow.user));
+
+            return updatedUserFollow;
         case 'UNFOLLOW':
-            return {
+            const updatedFollowingsUnFollow = state.user.followings.filter(
+                (following) => following !== action.payload,
+            );
+            const updatedUserUnFollow = {
                 ...state,
                 user: {
                     ...state.user,
-                    followings: state.user.followings.filter(
-                        (following) => following !== action.payload,
-                    ),
+                    followings: updatedFollowingsUnFollow,
                 },
             };
+            localStorage.setItem('user', JSON.stringify(updatedUserUnFollow.user));
+
+            return updatedUserUnFollow;
         default:
             return state;
     }

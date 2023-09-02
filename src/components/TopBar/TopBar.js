@@ -29,7 +29,9 @@ function TopBar() {
             </div>
             <div className={cx('right')}>
                 <div className={cx('links')}>
-                    <span className={cx('link')}>Home Page</span>
+                    <Link to={'/'}>
+                        <span className={cx('link')}>Home Page</span>
+                    </Link>
                     <span className={cx('link')}>Time line</span>
                 </div>
                 <div className={cx('icons')}>

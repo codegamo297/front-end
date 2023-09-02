@@ -1,22 +1,30 @@
 import classNames from 'classnames/bind';
 import styles from './Online.module.scss';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function Online({ user }) {
+function Online({ friendOnline }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const isOnline = false;
     return (
-        <li key={user.id} className={cx('friend')}>
-            <div className={cx('profile-img-container')}>
-                <img
-                    className={cx('profile-img')}
-                    src={PF + user.profilePicture || `${PF}person/noAvatar.png`}
-                    alt=""
-                />
-                <span className={cx('online')}></span>
-            </div>
-            <span className={cx('user-name')}>{user.username}</span>
-        </li>
+        <Link to={'/profile/' + friendOnline.userName}>
+            <li className={cx('friend')}>
+                <div className={cx('profile-img-container')}>
+                    <img
+                        className={cx('profile-img')}
+                        src={PF + friendOnline.profilePicture || `${PF}person/noAvatar.png`}
+                        alt=""
+                    />
+                    {isOnline ? (
+                        <span className={cx('online')}></span>
+                    ) : (
+                        <span className={cx('offline')}></span>
+                    )}
+                </div>
+                <span className={cx('user-name')}>{friendOnline.userName}</span>
+            </li>
+        </Link>
     );
 }
 

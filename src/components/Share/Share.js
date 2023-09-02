@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { PermMedia, Label, Room, EmojiEmotions } from '@mui/icons-material';
+import { PermMedia, Label, Room, EmojiEmotions, Cancel } from '@mui/icons-material';
 import { useContext, useRef, useState } from 'react';
 
 import styles from './Share.module.scss';
@@ -57,8 +57,13 @@ function Share() {
                         ref={descRef}
                     />
                 </div>
-                {/* Phần chỉnh Upload ảnh */}
                 <hr className={cx('hr')} />
+                {file && (
+                    <div className={cx('img-container')}>
+                        <img className={cx('img-share')} src={URL.createObjectURL(file)} alt="" />
+                        <Cancel className={cx('icon-cancel')} onClick={() => setFile(null)} />
+                    </div>
+                )}
                 <form className={cx('bottom')} onSubmit={handleSubmit}>
                     <div className={cx('options')}>
                         <label htmlFor="file" className={cx('option')}>

@@ -1,4 +1,6 @@
+import { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import axios from 'axios';
 import {
     Bookmark,
     Chat,
@@ -12,12 +14,27 @@ import {
 } from '@mui/icons-material';
 
 import styles from './Sidebar.module.scss';
-import { Users } from '~/dummyData';
 import CloseFriend from '../CloseFriend/CloseFriend';
+import { AuthorContext } from '~/context/AuthorContext';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const [closeFriends, setCloseFriends] = useState([]);
+    const { user } = useContext(AuthorContext);
+
+    useEffect(() => {
+        const getFriends = async () => {
+            try {
+                const friendList = await axios.get('/users/friends/' + user._id);
+                setCloseFriends(friendList.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getFriends();
+    }, [user]);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -64,8 +81,8 @@ function Sidebar() {
                 <hr className={cx('hr')} />
 
                 <ul className={cx('friend-list')}>
-                    {Users.map((user) => (
-                        <CloseFriend key={user.id} user={user} />
+                    {closeFriends.map((closeFriend) => (
+                        <CloseFriend key={closeFriend._id} closeFriend={closeFriend} />
                     ))}
                 </ul>
             </div>

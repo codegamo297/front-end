@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Add, Remove } from '@mui/icons-material';
 
 import styles from './RightBar.module.scss';
-import { Users } from '~/dummyData';
 import Online from '../Online';
 import { AuthorContext } from '~/context/AuthorContext';
 import { Follow, UnFollow } from '~/context/AuthorActions';
@@ -15,20 +14,35 @@ const cx = classNames.bind(styles);
 function RightBar({ user }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const [friends, setFriends] = useState([]);
+    const [friendsOnline, setFriendsOnline] = useState([]);
     const { user: currentUser, dispatch } = useContext(AuthorContext);
     const [isFollowed, setIsFollowed] = useState(currentUser.followings.includes(user?._id));
 
     useEffect(() => {
         const getFriends = async () => {
             try {
-                const friendList = await axios.get('/users/friends/' + user._id);
-                setFriends(friendList.data);
+                if (user && user._id) {
+                    const friendList = await axios.get('/users/friends/' + user._id);
+                    setFriends(friendList.data);
+                }
             } catch (error) {
                 console.log(error);
             }
         };
         getFriends();
     }, [user]);
+
+    useEffect(() => {
+        const getFriends = async () => {
+            try {
+                const friendList = await axios.get('/users/friends/' + currentUser._id);
+                setFriendsOnline(friendList.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getFriends();
+    }, [currentUser]);
 
     const handleClick = async () => {
         try {
@@ -57,8 +71,8 @@ function RightBar({ user }) {
                 <img className={cx('ad')} src={`${PF}ad.png`} alt="" />
                 <h4 className={cx('title')}>Online Friends</h4>
                 <ul className={cx('friend-list')}>
-                    {Users.map((user) => (
-                        <Online key={user.id} user={user} />
+                    {friendsOnline.map((friendOnline) => (
+                        <Online key={friendOnline._id} friendOnline={friendOnline} />
                     ))}
                 </ul>
             </>

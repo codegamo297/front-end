@@ -6,6 +6,7 @@ import { CircularProgress } from '@mui/material';
 import styles from './Login.module.scss';
 import { loginCall } from '~/apiCalls';
 import { AuthorContext } from '~/context/AuthorContext';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -86,13 +87,15 @@ function Login() {
                         </button>
                         <span className={cx('forgot')}>Forgotten password?</span>
                         <hr className={cx('hr')} />
-                        <button className={cx('register-btn')}>
-                            {isFetching ? (
-                                <CircularProgress color="inherit" size="22px" />
-                            ) : (
-                                'Create new account'
-                            )}
-                        </button>
+                        <Link to="/register" className={cx('link-register')}>
+                            <button className={cx('register-btn')}>
+                                {isFetching ? (
+                                    <CircularProgress color="inherit" size="22px" />
+                                ) : (
+                                    'Create new account'
+                                )}
+                            </button>
+                        </Link>
                     </form>
                 </div>
             </div>

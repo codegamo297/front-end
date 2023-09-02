@@ -28,6 +28,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 ::-webkit-scrollbar {
     width: 1.2rem;
 }

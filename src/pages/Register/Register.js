@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Register.module.scss';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -142,7 +142,9 @@ function Register() {
                             Sign up
                         </button>
                         <hr className={cx('hr')} />
-                        <button className={cx('register-btn')}>Log into Account</button>
+                        <Link to="/login" className={cx('link-login')}>
+                            <button className={cx('register-btn')}>Login to Account</button>
+                        </Link>
                     </form>
                 </div>
             </div>
