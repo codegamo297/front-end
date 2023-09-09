@@ -46,7 +46,11 @@ function Post({ post }) {
                         <Link to={`/profile/${user.userName}`} className={cx('link')}>
                             <img
                                 className={cx('profile-img')}
-                                src={PF + user.profilePicture || `${PF}person/noAvatar.png`}
+                                src={
+                                    user.profilePicture !== undefined
+                                        ? PF + user.profilePicture || `${PF}person/noAvatar.png`
+                                        : `${PF}person/noAvatar.png`
+                                }
                                 alt=""
                             />
                             <span className={cx('user-name')}>{user.userName}</span>

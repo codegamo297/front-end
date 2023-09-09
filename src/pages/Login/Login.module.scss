@@ -60,7 +60,6 @@
         border-color: var(--primary);
         box-shadow: 0 0 0 2px #e7f3ff;
         caret-color: var(--primary);
-        outline: none;
     }
 }
 
@@ -84,7 +83,6 @@
 .btn {
     height: 50px;
     border-radius: 10px;
-    border: none;
     color: var(--white);
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
@@ -118,7 +116,6 @@
     height: 50px;
     align-self: center;
     border-radius: 10px;
-    border: none;
     color: var(--white);
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;

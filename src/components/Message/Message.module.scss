@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.wrapper.own {
+    align-items: flex-end;
+}
+
+.top {
+    display: flex;
+}
+
+.img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.text {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 1.4rem;
+    max-width: 300px;
+}
+
+.wrapper.own .text {
+    background-color: #f4eeee;
+    color: var(--black);
+}
+
+.bottom {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}

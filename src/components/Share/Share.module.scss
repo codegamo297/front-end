@@ -24,13 +24,8 @@
 }
 
 .input {
-    border: none;
     width: 80%;
     font-size: 1.6rem;
-
-    &:focus {
-        outline: none;
-    }
 }
 
 .hr {
@@ -88,7 +83,6 @@
 }
 
 .btn {
-    border: none;
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;

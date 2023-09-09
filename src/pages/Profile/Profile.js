@@ -34,12 +34,20 @@ function Profile() {
                         <div className={cx('cover')}>
                             <img
                                 className={cx('cover-img')}
-                                src={PF + user.coverPicture || `${PF}person/noCover.png`}
+                                src={
+                                    user.coverPicture !== undefined
+                                        ? PF + user.coverPicture || `${PF}person/noCover.png`
+                                        : `${PF}person/noCover.png`
+                                }
                                 alt=""
                             />
                             <img
                                 className={cx('user-img')}
-                                src={PF + user.profilePicture || `${PF}person/noAvatar.png`}
+                                src={
+                                    user.profilePicture !== undefined
+                                        ? PF + user?.profilePicture || `${PF}person/noAvatar.png`
+                                        : `${PF}person/noAvatar.png`
+                                }
                                 alt=""
                             />
                         </div>

@@ -39,10 +39,12 @@ function TopBar() {
                         <Person className={cx('search-icon')} />
                         <span className={cx('icon-badge')}>1</span>
                     </div>
-                    <div className={cx('icon-item')}>
-                        <Chat className={cx('search-icon')} />
-                        <span className={cx('icon-badge')}>2</span>
-                    </div>
+                    <Link to="/messenger">
+                        <div className={cx('icon-item')}>
+                            <Chat className={cx('search-icon')} />
+                            <span className={cx('icon-badge')}>2</span>
+                        </div>
+                    </Link>
                     <div className={cx('icon-item')}>
                         <Notifications className={cx('search-icon')} />
                         <span className={cx('icon-badge')}>1</span>
